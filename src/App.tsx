@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import {Counter} from "./counter/Counter";
+import {Counter} from "././counter/Counter";
+import {Settings} from "./settings/Settings";
 
 function App() {
     const min = 0;
@@ -31,6 +32,8 @@ function App() {
 
     return (
         <div className="App">
+            <Settings
+                counter={counter}/>
             <Counter
                 counter={counter}
                 incNumber={incHandler}
