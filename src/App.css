@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.App > div {
+    margin-right: 100px;
+}
+
 .counter-div {
     display: flex;
     flex-direction: column;

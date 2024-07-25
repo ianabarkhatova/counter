@@ -1,37 +1,41 @@
 import {Button} from "../button/Button";
 import {Number} from "../number/Number";
+import {ChangeEvent} from "react";
 
 
 type CounterProps = {
     incNumber: () => void
     resNumber: () => void
     counter: number
-    min: number
-    max: number
+    handleMinChange: (e: ChangeEvent<HTMLInputElement>) => void
+    handleMaxChange: (e: ChangeEvent<HTMLInputElement>) => void
+    minValue: number
+    maxValue: number
+    settingsApplied: boolean
 };
 
 
-export const Counter = ({incNumber, resNumber, counter, min, max}: CounterProps) => {
+export const Counter = ({incNumber, resNumber, counter, minValue, maxValue, settingsApplied}: CounterProps) => {
     return (
         <div className={"counter-div"}>
             <div className={"number-div"}>
                 <Number
-                    className={counter > max ? "span-counter-max" : "span-counter"}
+                    className={counter === maxValue && counter !== 0 ? "span-counter-max" : "span-counter"}
                     counter={counter}/>
             </div>
 
             <div className={"buttons-div"}>
                 <Button
                     title={"inc"}
-                    className={counter > max ? "disabled" : "button-main"}
+                    className={counter === maxValue || !settingsApplied ? "disabled" : "button-main"}
                     onClick={incNumber}
-                    disabled={counter > max}
+                    disabled={counter > maxValue}
                 />
                 <Button
                     title={"reset"}
-                    className={counter === min ? "disabled" : "button-main"}
+                    className={counter === minValue || !settingsApplied? "disabled" : "button-main"}
                     onClick={resNumber}
-                    disabled={counter === min}
+                    disabled={counter === minValue}
                 />
             </div>
         </div>
