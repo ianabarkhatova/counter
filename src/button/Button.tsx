@@ -11,3 +11,4 @@ export const Button = ({title, className, onClick, disabled}: ButtonProps) => {
         <button className={className} onClick={onClick} disabled={disabled}>{title}</button>
     );
 };
+

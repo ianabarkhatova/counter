@@ -19,10 +19,16 @@ export const Counter = ({incNumber, resNumber, counter, minValue, maxValue, sett
     return (
         <div className={"counter-div"}>
             <div className={"number-div"}>
+                {!settingsApplied ? (
+                    <div className={'enter-values'}>Enter min and max values and press 'set'</div>
+                ) : (
                 <Number
                     className={counter === maxValue && counter !== 0 ? "span-counter-max" : "span-counter"}
-                    counter={counter}/>
+                    counter={counter}
+                />
+                )}
             </div>
+
 
             <div className={"buttons-div"}>
                 <Button

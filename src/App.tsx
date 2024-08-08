@@ -33,6 +33,10 @@ function App() {
         if (minValueAsString) {
             const newMinValue = JSON.parse(minValueAsString)
             setMinValue(newMinValue)
+
+            if (newMinValue !== 0) {
+                setSettingsApplied(true);
+            }
         }
     }, [])
 
@@ -47,6 +51,10 @@ function App() {
         if (maxValueAsString) {
             const newMaxValue = JSON.parse(maxValueAsString)
             setMaxValue(newMaxValue)
+
+            if (newMaxValue !== 0) {
+                setSettingsApplied(true);
+            }
         }
     }, [])
 
