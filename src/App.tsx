@@ -13,6 +13,9 @@ function App() {
 
 // todo: fix bug when start and max values are the same - inc button is not deactivated
 // todo: fix bug when start value is greater than max values - inc button is not deactivated
+// todo: fix bug when reset button is active when start value is greater than max value
+// todo: fix bug when inc button is active when start value is greater than max value
+
 
     //deactivated local storage until 14th lesson
 //local storage - counter

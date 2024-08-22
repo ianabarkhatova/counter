@@ -1,49 +1,54 @@
-type CounterStateType = {
+export type CounterStateType = {
+    counter: number
     minValue: number
     maxValue: number
-    counter: number
+
 }
 
-type ActionsType =
-    | 'INCREMENT-NUMBER'
-    | 'RESET-COUNTER'
-    | 'HANDLE-MIN-VALUE-CHANGE'
-    | 'HANDLE-MAX-VALUE-CHANGE'
-    | 'APPLY-SETTINGS'
-
-
-type ActionType = {
-    type: ActionsType
-    // [key: string]: any
+export type IncrementNumberActionType = {
+    type: 'INCREMENT-NUMBER',
 }
 
-export const counterReducer = (state: CounterStateType, action: ActionType) => {
+export type ResetCounterActionType = {
+    type: 'RESET-COUNTER',
+    payload: {
+        minValue: number
+    }
+}
+
+type ActionType =
+    | IncrementNumberActionType
+    | ResetCounterActionType
+
+
+
+export const counterReducer = (state: CounterStateType, action: ActionType): CounterStateType => {
     switch (action.type) {
         case 'INCREMENT-NUMBER':
             return {
-                // number
+                ...state,
+                counter: state.counter < state.maxValue ? state.counter + 1 : state.counter
             }
         case 'RESET-COUNTER':
             return {
-                // number
-            }
-        case 'HANDLE-MIN-VALUE-CHANGE':
-            return {
-                // number
-            }
-        case 'HANDLE-MAX-VALUE-CHANGE':
-            return {
-                // number
-            }
-        case 'APPLY-SETTINGS':
-            return {
-                // number
+                ...state,
+                counter: action.payload.minValue
             }
 
         default:
             return state
     }
 }
+
+export const incrementNumberAC = (): IncrementNumberActionType => {
+    return { type: 'INCREMENT-NUMBER'}
+}
+
+export const resetCounterAC = (minValue: number): ResetCounterActionType => {
+    return { type: 'RESET-COUNTER', payload: { minValue }}
+}
+
+
 
 
 
