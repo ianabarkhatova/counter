@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import './App.css';
-import {Counter} from "./counter/Counter";
-import {Settings} from "./settings/Settings";
+import {Counter} from "./components/counter/Counter";
+import {Settings} from "./components/settings/Settings";
 
 function App() {
 
@@ -9,59 +9,60 @@ function App() {
     const [maxValue, setMaxValue] = useState<number>(0);
 
     const [counter, setCounter] = useState<number>(minValue)
-    const[settingsApplied, setSettingsApplied] = useState<boolean>(false)
+    const [settingsApplied, setSettingsApplied] = useState<boolean>(false)
 
+// todo: fix bug when start and max values are the same - inc button is not deactivated
+// todo: fix bug when start value is greater than max values - inc button is not deactivated
 
-
+    //deactivated local storage until 14th lesson
 //local storage - counter
-    useEffect(() => {
-        const counterAsString = localStorage.getItem('counterValue')
-        if (counterAsString) {
-            const newCounter = JSON.parse(counterAsString)
-            setCounter(newCounter)
-        }
-    }, [])
-
-    //каждый раз, когда counter будет изменяться, я буду попадать в counter, и будет устанавливаться значение в local storage
-    useEffect(() => {
-        localStorage.setItem('counterValue', JSON.stringify(counter))
-    }, [counter])
-
-//local storage - minValue
-    useEffect(() => {
-        const minValueAsString = localStorage.getItem('newMinValue')
-        if (minValueAsString) {
-            const newMinValue = JSON.parse(minValueAsString)
-            setMinValue(newMinValue)
-
-            if (newMinValue !== 0) {
-                setSettingsApplied(true);
-            }
-        }
-    }, [])
-
-
-    useEffect(() => {
-        localStorage.setItem('newMinValue', JSON.stringify(minValue))
-    }, [minValue])
-
-    //local storage - maxValue
-    useEffect(() => {
-        const maxValueAsString = localStorage.getItem('newMaxValue')
-        if (maxValueAsString) {
-            const newMaxValue = JSON.parse(maxValueAsString)
-            setMaxValue(newMaxValue)
-
-            if (newMaxValue !== 0) {
-                setSettingsApplied(true);
-            }
-        }
-    }, [])
-
-
-    useEffect(() => {
-        localStorage.setItem('newMaxValue', JSON.stringify(maxValue))
-    }, [maxValue])
+//     useEffect(() => {
+//         const counterAsString = localStorage.getItem('counterValue')
+//         if (counterAsString) {
+//             const newCounter = JSON.parse(counterAsString)
+//             setCounter(newCounter)
+//         }
+//     }, [])
+//
+//     //каждый раз, когда counter будет изменяться, я буду попадать в counter, и будет устанавливаться значение в local storage
+//     useEffect(() => {
+//         localStorage.setItem('counterValue', JSON.stringify(counter))
+//     }, [counter])
+//
+// //local storage - minValue
+//     useEffect(() => {
+//         const minValueAsString = localStorage.getItem('newMinValue')
+//         if (minValueAsString) {
+//             const newMinValue = JSON.parse(minValueAsString)
+//             setMinValue(newMinValue)
+//
+//             if (newMinValue !== 0) {
+//                 setSettingsApplied(true);
+//             }
+//         }
+//     }, [])
+//
+//     useEffect(() => {
+//         localStorage.setItem('newMinValue', JSON.stringify(minValue))
+//     }, [minValue])
+//
+//     //local storage - maxValue
+//     useEffect(() => {
+//         const maxValueAsString = localStorage.getItem('newMaxValue')
+//         if (maxValueAsString) {
+//             const newMaxValue = JSON.parse(maxValueAsString)
+//             setMaxValue(newMaxValue)
+//
+//             if (newMaxValue !== 0) {
+//                 setSettingsApplied(true);
+//             }
+//         }
+//     }, [])
+//
+//
+//     useEffect(() => {
+//         localStorage.setItem('newMaxValue', JSON.stringify(maxValue))
+//     }, [maxValue])
 
 
     const incHandler = () =>
@@ -87,8 +88,6 @@ function App() {
             setSettingsApplied(true)
         }
     }
-
-
 
 
     return (

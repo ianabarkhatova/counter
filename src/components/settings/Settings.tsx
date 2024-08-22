@@ -1,5 +1,5 @@
 import {Button} from "../button/Button";
-import {Value} from "./Value";
+import {Value} from "./value/Value";
 import {ChangeEvent, useEffect, useState} from "react";
 
 
@@ -17,7 +17,6 @@ type SettingsProps = {
 export const Settings = ({handleMinChange, handleMaxChange, setCounter, minValue, maxValue, applySettings}: SettingsProps) => {
 
     const [settingsError, setSettingsError] = useState<string | null>(null)
-
 
     useEffect(() => {
         if (minValue === maxValue && minValue !== 0) {
