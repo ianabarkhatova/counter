@@ -33,15 +33,15 @@ export const Counter = ({incNumber, resNumber, counter, minValue, maxValue, sett
             <div className={"buttons-div"}>
                 <Button
                     title={"inc"}
-                    className={counter === maxValue || !settingsApplied ? "disabled" : "button-main"}
+                    className={counter === maxValue || minValue >= maxValue || !settingsApplied ? "disabled" : "button-main"}
                     onClick={incNumber}
-                    disabled={counter > maxValue}
+                    disabled={counter > maxValue || minValue >= maxValue || !settingsApplied}
                 />
                 <Button
                     title={"reset"}
-                    className={counter === minValue || !settingsApplied? "disabled" : "button-main"}
+                    className={counter === minValue || minValue >= maxValue || !settingsApplied ? "disabled" : "button-main"}
                     onClick={resNumber}
-                    disabled={counter === minValue}
+                    disabled={counter === minValue || minValue >= maxValue}
                 />
             </div>
         </div>

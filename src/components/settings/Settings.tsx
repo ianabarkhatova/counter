@@ -13,7 +13,6 @@ type SettingsProps = {
 };
 
 
-
 export const Settings = ({handleMinChange, handleMaxChange, setCounter, minValue, maxValue, applySettings}: SettingsProps) => {
 
     const [settingsError, setSettingsError] = useState<string | null>(null)
@@ -21,6 +20,7 @@ export const Settings = ({handleMinChange, handleMaxChange, setCounter, minValue
     useEffect(() => {
         if (minValue === maxValue && minValue !== 0) {
             setSettingsError('Start and max values cannot be equal');
+
         }
         else if (maxValue < minValue) {
             setSettingsError('Start value cannot be greater than max value');
