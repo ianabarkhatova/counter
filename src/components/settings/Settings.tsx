@@ -32,12 +32,12 @@ export const Settings = ({handleMinChange, handleMaxChange, minValue, maxValue, 
 
     return (
         <div className={"counter-div"}>
+            <div className={'div-text'}>Settings</div>
             <div className={"value-div"}>
                 <Value valueText={'max value'} onChange={handleMaxChange} value={maxValue}/>
                 <Value valueText={'start value'} onChange={handleMinChange} value={minValue}/>
                 {settingsError && <div className={"error-message"}>{settingsError}</div>}
             </div>
-
 
             <div className={"buttons-div"}>
                 <Button

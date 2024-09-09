@@ -1,12 +1,11 @@
 .App {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.App > div {
-    margin-right: 100px;
+    gap: 40px;
+    background-color: #FFF8E8;
 }
 
 .counter-div {
@@ -17,19 +16,30 @@
     width: 380px;
     height: 320px;
     border-radius: 20px;
-    border: 5px solid rgba(119, 223, 255, 0.79);
-    gap: 20px;
+    border: 5px solid #674636;
+    gap: 10px;
+    background-color: #FBF8ED;
+
+    @media (max-width: 450px) {
+        width: 330px;
+        height: 320px;
+    }
 }
 
 .number-div {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 350px;
+    max-width: 350px;
+    width: 100%;
     height: 150px;
-    border: 5px solid rgba(119, 223, 255, 0.79);
+    border: 5px solid #AAB396;
     border-radius: 20px;
     box-sizing: border-box;
+
+    @media (max-width: 450px) {
+        width: 300px;
+    }
 }
 
 .value-div {
@@ -39,9 +49,8 @@
     align-items: center;
     width: 350px;
     height: 150px;
-    border: 5px solid rgba(119, 223, 255, 0.79);
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -52,19 +61,17 @@
     gap: 20px;
     width: 350px;
     height: 100px;
-    border-radius: 20px;
-    border: 5px solid rgba(119, 223, 255, 0.79);
     box-sizing: border-box;
 }
 
 .button-main {
-    background-color: rgba(119, 223, 255, 0.79);
+    background-color: #007F00;
     border-radius: 10px;
     border: none;
     font-family: Helvetica, sans-serif;
     font-size: 50px;
     font-weight: bold;
-    color: rgba(3, 3, 6, 0.79);
+    color: rgba(3, 3, 6, 0.5);
     padding: 0 25px;
 }
 
@@ -83,7 +90,7 @@
 }
 
 .disabled {
-    background-color: rgba(119, 223, 255, 0.5);
+    background-color: #CCD1C0;
     color: rgba(3, 3, 6, 0.5);
     border-radius: 10px;
     border: none;
@@ -100,7 +107,14 @@
     font-family: Helvetica, sans-serif;
     font-size: 20px;
     font-weight: bold;
-    color: rgba(119, 223, 255, 0.79);
+    color: #AAB396;
+}
+
+.div-text {
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(7, 38, 48, 0.79);
 }
 
 .span-value-div {
@@ -108,10 +122,14 @@
     display: flex;
     justify-content: space-between;
     text-align: center;
+
+    @media (max-width: 450px) {
+        justify-content: space-around;
+    }
 }
 
 .input {
-    border: 2px solid rgba(119, 223, 255, 0.79);
+    border: 2px solid #AAB396;
     border-radius: 5px;
     font-family: Helvetica, sans-serif;
     font-size: 15px;
@@ -119,14 +137,18 @@
     padding: 10px;
     text-align: center;
     max-width: 150px;
+    outline: none;
 }
 
 .enter-values {
     font-family: Helvetica, sans-serif;
     font-size: 15px;
     font-weight: bold;
-    color: red;
+    color: #990000;
+    text-align: center;
 }
+
+
 
 
 

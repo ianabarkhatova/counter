@@ -18,9 +18,10 @@ type CounterProps = {
 export const Counter = ({incNumber, resNumber, counter, minValue, maxValue, settingsApplied}: CounterProps) => {
     return (
         <div className={"counter-div"}>
+            <div className={'div-text'}>Counter</div>
             <div className={"number-div"}>
                 {!settingsApplied ? (
-                    <div className={'enter-values'}>Enter min and max values and press 'set'</div>
+                    <div className={'enter-values'}>Enter start and max values and press 'set'</div>
                 ) : (
                 <Number
                     className={counter === maxValue && counter !== 0 ? "span-counter-max" : "span-counter"}

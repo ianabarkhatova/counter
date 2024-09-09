@@ -9,7 +9,6 @@ type ValuePropsType = {
 
 
 export const Value = ({valueText, onChange, value}: ValuePropsType) => {
-
     return (
         <div className={"span-value-div"}>
             <span className={'span-value'}>{valueText}:</span>
