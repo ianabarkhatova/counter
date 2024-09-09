@@ -1,15 +1,14 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent, useEffect} from 'react';
 import './App.css';
 import {Counter} from "./components/counter/Counter";
 import {Settings} from "./components/settings/Settings";
 import {useDispatch, useSelector} from "react-redux";
-import {CounterStateType, incrementNumberAC, resetCounterAC} from "./state/counter-reducer";
-import {RootState} from "./app/store";
-import {applySettingsAC, setMaxValueAC, setMinValueAC, SettingsStateType} from "./state/settings-reducer";
+import {incrementNumberAC, resetCounterAC} from "./state/counter-reducer";
+import {applySettingsAC, setMaxValueAC, setMinValueAC} from "./state/settings-reducer";
 import {counterSelector} from "./state/selectors/counterSelector/counterSelector";
 import {minValueSelector} from "./state/selectors/minValueSelector/minValueSelector";
-import {maxValueSelector} from "./state/selectors/maxValueSelector/maxValueSelector";
 import {settingsAppliedSelector} from "./state/selectors/settingsAppliedSelector/settingsAppliedSelector";
+import {maxValueSelector} from "./state/selectors/maxValueSelector/maxValueSelector";
 
 function App() {
     const dispatch = useDispatch();
@@ -77,10 +76,12 @@ function App() {
     }
 
     const handleMinChange = (e: ChangeEvent<HTMLInputElement>) => {
+        // debugger
         dispatch(setMinValueAC(Number(e.currentTarget.value)))
     };
 
     const handleMaxChange = (e: ChangeEvent<HTMLInputElement>) => {
+        // debugger
         dispatch(setMaxValueAC(Number(e.currentTarget.value)))
     }
 

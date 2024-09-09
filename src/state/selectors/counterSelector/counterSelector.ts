@@ -1,4 +1,4 @@
-import {RootState} from "../../../app/store";
+import {AppRootStateType} from "../../../app/store";
 
-export const counterSelector = (state: RootState): number => state.counter?.counter
+export const counterSelector = (state: AppRootStateType): number => state.counter.counter
 

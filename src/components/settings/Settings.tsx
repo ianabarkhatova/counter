@@ -42,7 +42,7 @@ export const Settings = ({handleMinChange, handleMaxChange, minValue, maxValue, 
             <div className={"buttons-div"}>
                 <Button
                     title={"set"}
-                    className={minValue <= 0 || settingsError? "disabled" : "button-main"}
+                    className={(minValue === 0 && maxValue === 0) || settingsError? "disabled" : "button-main"}
                     onClick={applySettings}
                     disabled={!!settingsError}
                 />

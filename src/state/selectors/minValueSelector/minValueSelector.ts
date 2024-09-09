@@ -1,5 +1,6 @@
-import {RootState} from "../../../app/store";
+import {AppRootStateType} from "../../../app/store";
 
-export const minValueSelector = (state: RootState): number => state.counter?.minValue
+export const minValueSelector = (state: AppRootStateType): number => state.settings.minValue
+
 
 

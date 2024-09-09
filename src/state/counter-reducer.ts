@@ -33,6 +33,11 @@ export const counterReducer = (state: CounterStateType = InitialCounterState, ac
                 ...state,
                 counter: state.counter + 1
             }
+
+            // return {
+            //     ...state,
+            //     counter: state.counter < state.maxValue ? state.counter + 1 : state.counter
+            // };
         case 'RESET-COUNTER':
             return {
                 ...state,

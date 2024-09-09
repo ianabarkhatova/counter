@@ -1,5 +1,5 @@
-import {RootState} from "../../../app/store";
+import {AppRootStateType} from "../../../app/store";
 
-export const maxValueSelector = (state: RootState): number => state.counter?.maxValue
+export const maxValueSelector = (state: AppRootStateType): number => state.settings.maxValue
 
 

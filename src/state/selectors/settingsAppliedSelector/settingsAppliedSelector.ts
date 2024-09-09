@@ -1,5 +1,5 @@
-import {RootState} from "../../../app/store";
+import {AppRootStateType} from "../../../app/store";
 
-export const settingsAppliedSelector = (state: RootState): boolean => state.settings?.settingsApplied
+export const settingsAppliedSelector = (state: AppRootStateType): boolean => state.settings.settingsApplied
 
 

@@ -1,5 +1,5 @@
 import {Button} from "../button/Button";
-import {Number} from "../number/Number";
+import {Number} from "./number/Number";
 import {ChangeEvent} from "react";
 
 
