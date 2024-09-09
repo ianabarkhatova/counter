@@ -6,14 +6,13 @@ import {ChangeEvent, useEffect, useState} from "react";
 type SettingsProps = {
     handleMinChange: (e: ChangeEvent<HTMLInputElement>) => void
     handleMaxChange: (e: ChangeEvent<HTMLInputElement>) => void
-    setCounter: (value: number) => void
     minValue: number
     maxValue: number
     applySettings: () => void
 };
 
 
-export const Settings = ({handleMinChange, handleMaxChange, setCounter, minValue, maxValue, applySettings}: SettingsProps) => {
+export const Settings = ({handleMinChange, handleMaxChange, minValue, maxValue, applySettings}: SettingsProps) => {
 
     const [settingsError, setSettingsError] = useState<string | null>(null)
 

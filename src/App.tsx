@@ -11,10 +11,7 @@ function App() {
     const [counter, setCounter] = useState<number>(minValue)
     const [settingsApplied, setSettingsApplied] = useState<boolean>(false)
 
-// todo: fix bug when inc button is active when start value is greater than max value
 
-
-    //deactivated local storage until 14th lesson
 //local storage - counter
     useEffect(() => {
         const counterAsString = localStorage.getItem('counterValue')
@@ -96,7 +93,7 @@ function App() {
             <Settings
                 handleMinChange={handleMinChange}
                 handleMaxChange={handleMaxChange}
-                setCounter={setCounter}
+                // setCounter={setCounter}
                 minValue={minValue}
                 maxValue={maxValue}
                 applySettings={applySettings}
