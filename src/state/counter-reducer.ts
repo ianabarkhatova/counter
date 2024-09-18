@@ -1,13 +1,13 @@
 export type CounterStateType = {
     counter: number
     minValue: number
-    maxValue: number
+    maxValue: number,
 }
 
 const InitialCounterState: CounterStateType = {
     counter: 0,
     minValue: 0,
-    maxValue: 0
+    maxValue: 0,
 }
 
 export type IncrementNumberActionType = {
@@ -25,7 +25,6 @@ type CounterActionType =
     | IncrementNumberActionType
     | ResetCounterActionType
 
-
 export const counterReducer = (state: CounterStateType = InitialCounterState, action: CounterActionType): CounterStateType => {
     switch (action.type) {
         case 'INCREMENT-NUMBER':
@@ -34,10 +33,10 @@ export const counterReducer = (state: CounterStateType = InitialCounterState, ac
                 counter: state.counter + 1
             }
 
-            // return {
-            //     ...state,
-            //     counter: state.counter < state.maxValue ? state.counter + 1 : state.counter
-            // };
+        // return {
+        //     ...state,
+        //     counter: state.counter < state.maxValue ? state.counter + 1 : state.counter
+        // };
         case 'RESET-COUNTER':
             return {
                 ...state,
@@ -50,12 +49,13 @@ export const counterReducer = (state: CounterStateType = InitialCounterState, ac
 }
 
 export const incrementNumberAC = (): IncrementNumberActionType => {
-    return { type: 'INCREMENT-NUMBER' }
+    return {type: 'INCREMENT-NUMBER'}
 }
 
 export const resetCounterAC = (minValue: number): ResetCounterActionType => {
-    return { type: 'RESET-COUNTER', payload: { minValue }}
+    return {type: 'RESET-COUNTER', payload: {minValue}}
 }
+
 
 
 

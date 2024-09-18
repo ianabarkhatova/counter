@@ -9,16 +9,17 @@ import {counterSelector} from "./state/selectors/counterSelector/counterSelector
 import {minValueSelector} from "./state/selectors/minValueSelector/minValueSelector";
 import {settingsAppliedSelector} from "./state/selectors/settingsAppliedSelector/settingsAppliedSelector";
 import {maxValueSelector} from "./state/selectors/maxValueSelector/maxValueSelector";
+import {AppRootStateType} from "./app/store";
 
 function App() {
     const dispatch = useDispatch();
 
-    let counter = useSelector(counterSelector)
-    let minValue = useSelector(minValueSelector)
-    let maxValue = useSelector(maxValueSelector)
-    let settingsApplied = useSelector(settingsAppliedSelector)
+    // useSelector принимает AppRootStateType и возвращает number:
+    let counter = useSelector<AppRootStateType, number>(counterSelector)
+    let minValue = useSelector<AppRootStateType, number>(minValueSelector)
+    let maxValue = useSelector<AppRootStateType, number>(maxValueSelector)
+    let settingsApplied = useSelector<AppRootStateType, boolean>(settingsAppliedSelector)
 
-    //deactivated local storage until 14th lesson
 //local storage - counter
 //     useEffect(() => {
 //         const counterAsString = localStorage.getItem('counterValue')
@@ -29,9 +30,9 @@ function App() {
 //     }, [])
 
 //каждый раз, когда counter будет изменяться, я буду попадать в counter, и будет устанавливаться значение в local storage
-    useEffect(() => {
-        localStorage.setItem('counterValue', JSON.stringify(counter))
-    }, [counter])
+//     useEffect(() => {
+//         localStorage.setItem('counterValue', JSON.stringify(counter))
+//     }, [counter])
 
 // //local storage - minValue
 //     useEffect(() => {
@@ -46,9 +47,9 @@ function App() {
 //         }
 //     }, [])
 
-    useEffect(() => {
-        localStorage.setItem('newMinValue', JSON.stringify(minValue))
-    }, [minValue])
+    // useEffect(() => {
+    //     localStorage.setItem('newMinValue', JSON.stringify(minValue))
+    // }, [minValue])
 
 //     //local storage - maxValue
 //     useEffect(() => {
@@ -63,9 +64,9 @@ function App() {
 //         }
 //     }, [])
 
-    useEffect(() => {
-        localStorage.setItem('newMaxValue', JSON.stringify(maxValue))
-    }, [maxValue])
+    // useEffect(() => {
+    //     localStorage.setItem('newMaxValue', JSON.stringify(maxValue))
+    // }, [maxValue])
 
 
     const incHandler = () =>
