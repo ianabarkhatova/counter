@@ -1,4 +1,6 @@
-Counter Project
+# Counter Project Description
+
+Redux, LocalStorage
 
 Initial State:
 
