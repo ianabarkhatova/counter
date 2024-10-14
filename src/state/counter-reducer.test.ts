@@ -11,7 +11,6 @@ beforeEach(()=> {
 test('counter should be incremented', () => {
     const action = incrementNumberAC()
     const endState: CounterStateType = counterReducer(startState, action)
-
     expect(endState.counter).toBe(1)
 })
 

@@ -36,7 +36,6 @@ type SettingsActionType =
 
 
 export const settingsReducer = (state: SettingsStateType = InitialSettingsState, action: SettingsActionType): SettingsStateType => {
-    // debugger
     switch (action.type) {
         case 'SET-MIN-VALUE':
             return {
@@ -61,7 +60,6 @@ export const settingsReducer = (state: SettingsStateType = InitialSettingsState,
 }
 
 export const setMinValueAC = (minValue: number): SetMinValueActionType => {
-    // debugger
     return {type: 'SET-MIN-VALUE', payload: {minValue}}
 }
 
